@@ -1,0 +1,21 @@
+// build.gradle: the recipe Gradle follows to build and run the app.
+
+plugins {
+    id 'application'                                   // adds the "run" task
+    id 'org.openjfx.javafxplugin' version '0.1.0'      // downloads JavaFX for us
+}
+
+repositories {
+    mavenCentral()                                     // where libraries are downloaded from
+}
+
+javafx {
+    version = '21'                                     // JavaFX version
+    modules = ['javafx.controls']                      // buttons, tables, text fields...
+}
+
+application {
+    // The class that starts the program. We use Launcher (not App) to avoid the
+    // "JavaFX runtime components are missing" error.
+    mainClass = 'com.example.lodgebilling.Launcher'
+}
